@@ -1,3 +1,6 @@
+# Codespace Django REST API endpoint suffix
+codespace_api_suffix = 'https://glowing-trout-4jq99rvj6vxw2q5j5.github.dev-8000.app.github.dev/api/'
+codespace_api_suffix = '/api/'
 
 from rest_framework import viewsets
 from .models import User, Team, Activity, Workout, Leaderboard
