@@ -25,18 +25,24 @@ from rest_framework.response import Response
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'teams', TeamViewSet)
-router.register(r'activity', ActivityViewSet)
+router.register(r'activities', ActivityViewSet)
 router.register(r'workouts', WorkoutViewSet)
 router.register(r'leaderboard', LeaderboardViewSet)
 
 @api_view(['GET'])
 def api_root(request, format=None):
+    base_url = 'https://glowing-trout-4jq99rvj6vxw2q5j5.github.dev-8000.app.github.dev/api/'
     return Response({
-        'users': '/users/',
-        'teams': '/teams/',
-        'activity': '/activity/',
-        'workouts': '/workouts/',
-        'leaderboard': '/leaderboard/',
+        'users': base_url + 'users/',
+        'teams': base_url + 'teams/',
+        'activities': base_url + 'activities/',
+        'workouts': base_url + 'workouts/',
+        'leaderboard': base_url + 'leaderboard/',
+        'local_users': '/api/users/',
+        'local_teams': '/api/teams/',
+        'local_activities': '/api/activities/',
+        'local_workouts': '/api/workouts/',
+        'local_leaderboard': '/api/leaderboard/',
     })
 
 urlpatterns = [
